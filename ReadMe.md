@@ -1,6 +1,7 @@
 ### Django Project Web Development Course
 
-- (Installing Python)[https://weledi.com/articles/python-setup]
+[Python Guide](https://weledi.com/articles/python-setup)
+
 
 ```bash
 ## step 01.
