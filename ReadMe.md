@@ -1,9 +1,9 @@
 ### Django Project Web Development Course
 
-
+```bash
 ## step 01.
-$ pip install django
-
+pip install django
+```
 
 
 ```bash
@@ -11,7 +11,6 @@ $ pip install django
 $ django-admin startproject blogweb_project .
 # the dot on the create project command means the current directory
 ```
-
 
 ```bash
 ## step-3 : run your django server
