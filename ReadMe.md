@@ -19,3 +19,31 @@ django-admin startproject blogweb_project .
 ## step-3 : run your django server
 python manage.py runserver
 ```
+
+
+
+
+```bash
+# on production envirnment when deploying for swsgi use guniron 
+gunicorn --bind=127.0.0.1:8000 blogweb_project.wsgi
+```
+
+python manage.py migrate
+
+downlode sqlite 3 database viewer at 
+
+https://sqlitebrowser.org/dl/
+
+python manage.py createsuperuser
+
+
+### HTML
+<tag></tag> eg <h1></h1> <p>content</p>
+
+### CSS
+- inline css style="......."
+- block css <style>
+
+</style>
+
+VIEWS & URLS
