@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # local apps
+    'users',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'blogweb_project.urls'
+
+
+AUTH_USER_MODEL = 'users.BlogUser'
 
 TEMPLATES = [
     {
@@ -67,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'blogweb_project.wsgi.application'
-
+# ASGI_APPLICATION = 'blogweb_project.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -102,7 +109,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-US'
 
 TIME_ZONE = 'Africa/Dar_Es_Salaam'
 

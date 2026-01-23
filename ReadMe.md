@@ -40,10 +40,24 @@ python manage.py createsuperuser
 ### HTML
 <tag></tag> eg <h1></h1> <p>content</p>
 
+(Get started with HTML)[https://w3schools.com/html/]
+
 ### CSS
+
+(Get started with CSS)[https://w3schools.com/css/]
+
+
 - inline css style="......."
 - block css <style>
 
 </style>
 
 VIEWS & URLS
+
+
+
+$ python manage.py startapp users
+$ python manage.py startapp blog 
+
+
+register them in settings.py

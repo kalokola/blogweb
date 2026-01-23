@@ -1,36 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body class="container mt-4">
-    <p class="fw-bold fs-3 text-info-emphasis">Weledi Blog</p>
-  
-    <div class="about">
-        <div class="mb-2">
-            <p>
-                <strong class="text-secondary">Weledi 📚 </strong> is a knowledge-driven blog focused on technology, data, and innovation in Africa. It explores programming, data science, blockchain, simulations, and real-world problem solving, turning complex ideas into practical insights that students, developers, and curious minds can apply immediately.
-            </p>
-        </div>
-        <div>
-            <p>
-                Weledi — Turning ideas, data, and code into real-world impact.
-            </p>
-        </div>
-    </div>
-    <div>
-        <a href="{% url 'about-page' %}" class="text-decoration-none"> 🤔 Do you know us?</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weledi Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    </div>
+<body class="bg-light">
 
-    <div class="mt-4">
-        <div class="d-inline p-2 text-bg-primary">Copyright</div>
-        <div class="d-inline p-2 text-bg-dark">2026</div>
+<!-- Top Bar -->
+<nav class="navbar" style="background-color: slategray;">
+  <div class="container">
+    <span class="navbar-brand text-white fw-semibold">
+      Weledi Blog
+    </span>
+    <span class="text-white small">
+      @{{ user.username }}
+    </span>
+  </div>
+</nav>
+
+<!-- Intro -->
+<section class="container my-4">
+  <div class="p-4 rounded text-white" style="background-color: slategray;">
+    <h4 class="fw-semibold mb-2">Weledi</h4>
+    <p class="mb-0 small">
+      A general media space in Tanzania sharing stories, ideas, and thoughts around technology, data, learning, and everyday life.
+    </p>
+  </div>
+</section>
+
+<!-- Posts -->
+<section class="container mb-4">
+  <h6 class="fw-semibold mb-3 text-uppercase" style="color: slategray;">
+    Trending
+  </h6>
+
+  <div class="row g-3">
+    {% for post in posts %}
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-semibold">
+            {{ post.title }}
+          </h6>
+          <p class="small text-muted mb-2">
+            {{ post.content|truncatewords:20 }}
+          </p>
+          <div class="d-flex justify-content-between align-items-center small">
+            <span class="text-muted">
+              @{{ post.user.username }}
+            </span>
+            <a href="#"
+               class="text-decoration-none fw-semibold"
+               style="color: slategray;">
+              Read →
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-3" >
+  <div class="container text-center text-white small">
+    © 2026 Weledi · Tanzania
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

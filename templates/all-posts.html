@@ -1,0 +1,10 @@
+<p>This page shall display posts.</p>
+
+
+{% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+        <p>by @{{ post.user.username }} at {{ post.created }}</p>
+    </div>
+{% endfor %}
