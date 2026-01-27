@@ -48,6 +48,9 @@ def create_post(request: HttpRequest):
                     user = request.user # by deafult every reqest has a known user
                 )
 
+                # post.likes.add(request.user)
+                # post.save()
+
         # return redirect("home-page")
 
     return render(request, 'create-post.html', context)
