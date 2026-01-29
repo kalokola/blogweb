@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
+from keys.keys import keys
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,12 +95,24 @@ WSGI_APPLICATION = 'blogweb_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     },
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': keys.get('db-name'),
+        'USER': keys.get('db-user'),
+        'PASSWORD': keys.get('db-pass'),
+        'HOST': keys.get('db-host'),
+        'PORT': keys.get('db-port'),
+    }
 }
+
 
 
 # Password validation
